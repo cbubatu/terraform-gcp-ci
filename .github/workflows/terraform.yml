@@ -19,7 +19,8 @@ jobs:
 
       - name: Authenticate to GCP
         run: |
-          echo "${{ secrets.GCP_CREDENTIALS }}" > $HOME/terraform/gcp-key.json
+          ls -al
+          echo "${{ secrets.GCP_CREDENTIALS }}" > $HOME/gcp-key.json
 
       - name: Terraform Init
         run: terraform init
