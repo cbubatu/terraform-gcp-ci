@@ -24,7 +24,7 @@ jobs:
       
       - name: Debug GCP credentials
         run: |
-          echo "${{ secrets.GCP_CREDENTIALS }}" | head -n 10
+          echo "${{ secrets.GCP_CREDENTIALS }}"
 
       - name: Terraform Init
         run: terraform init
