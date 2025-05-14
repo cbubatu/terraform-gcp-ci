@@ -19,9 +19,11 @@ jobs:
 
       - name: Authenticate to GCP
         run: |
-          ls -al
-          cat "${{ secrets.GCP_CREDENTIALS }}"
           echo "${{ secrets.GCP_CREDENTIALS }}" > $HOME/gcp-key.json
+      
+      - name: Debug GCP credentials
+        run: |
+          echo "${{ secrets.GCP_CREDENTIALS }}" | head -n 10
 
       - name: Terraform Init
         run: terraform init
